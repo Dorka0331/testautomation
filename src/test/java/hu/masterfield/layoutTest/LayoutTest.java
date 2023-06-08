@@ -30,37 +30,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LayoutTest extends GalenJUnitTestBase {
 
     static WebDriver driver;
-
     static WebDriverWait wait;
-
-//    static TestDevice device = new TestDevice("desktop", new Dimension(1024, 800), Arrays.asList("desktop"));
-    static TestDevice device = new TestDevice("mobile", new Dimension(360, 640), Arrays.asList("mobile"));
 
     @BeforeAll
     public static void setup() {
         WebDriverManager.chromedriver().setup();
 
-        /* Nexus 5 */
-        Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "Nexus 5");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        driver = new  ChromeDriver(options); // for mobile*/
 
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-        driver = new  ChromeDriver(chromeOptions); // for mobile
-
-        // driver = new ChromeDriver(); // desktop
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        driver.manage().window().setSize(device.getScreenSize());
-
-//        LayoutTest test = new LayoutTest();
-//        test.createDriver();
     }
 
     @Test
     @DisplayName("Login page layout test")
-    public void TC2() throws IOException {
-        driver.get("https://www.saucedemo.com");
+    public void loginPageLayoutTest() throws IOException {
+        driver.get("https://bevasarlas.tesco.hu/groceries/hu-HU/");
 
         WebElement loginButton = wait.until(driver -> driver.findElement(By.xpath("//span[text() = 'Bejelentkezés']")));
         loginButton.click();
@@ -68,7 +55,7 @@ public class LayoutTest extends GalenJUnitTestBase {
         assertEquals("Bejelentkezés", header.getText());
 
         // Galen layout checking
-        layoutReport = Galen.checkLayout(driver, "/specs/loginPageLayout.gspec", device.getTags());
+        layoutReport = Galen.checkLayout(driver, "/specs/loginPageLayout.gspec", Arrays.asList(new String[]{"desktop"}));
     }
 
     @AfterAll

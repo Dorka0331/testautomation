@@ -1,0 +1,25 @@
+@objects
+    header  xpath   //h1
+    logo    xpath   //*[@id="content"]/div/div[1]/div/header/div/a
+    email   id  email
+    password    id  password
+
+= Header =
+        header:
+            width   746px
+            height  36px
+
+
+= Logo =
+        logo:
+            width       100 to 200px
+            height      30 to 50px
+
+= Fields =
+        email:
+            width       500 to 800px
+            height      20 to 40px
+
+        password:
+            width       500 to 800px
+            height      20 to 50px
