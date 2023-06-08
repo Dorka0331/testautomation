@@ -9,10 +9,10 @@ import org.junit.runner.RunWith;
         features = "classpath:features",
         /* features = "@target/cucumber-rerun.txt"*/
         glue = {"hu.masterfield.steps"},
-        tags = "(@TC_ChangeLang and @important) or @TC_ChangeLangWithDataTable")/*,
+        tags = "@TC_ChangeLang or @TC_Login or @TC_SearchProduct",
         plugin = { "pretty", "summary", "json:target/cucumber-reports.json",
                 "junit:target/cucumber-reports.xml", "html:target/cucumber-reports.html",
                 "rerun:target/cucumber-rerun.txt"},
-        publish = true)*/
+        publish = true)
 public class TestRunner {
 }

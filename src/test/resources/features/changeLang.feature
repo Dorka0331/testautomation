@@ -15,4 +15,4 @@ Feature: The user shall be able to change the language in TescoShop
       Examples:
         | language  | new_language  |
         | magyar    | english       |
-        | english   | magyar       |
+        | english   | magyar        |

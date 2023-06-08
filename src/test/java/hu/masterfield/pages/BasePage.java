@@ -2,7 +2,8 @@ package hu.masterfield.pages;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.BeforeAll;
+
+import io.cucumber.java.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -29,5 +30,6 @@ public class BasePage {
     public String getURL() {
         return url();
     }
+
 
 }
