@@ -1,5 +1,6 @@
 package hu.masterfield;
 
+import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,26 +16,15 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class BaseTest {
-    protected static WebDriver driver;
-    protected static WebDriverWait wait;
 
     @BeforeAll
-    public static void setUp() throws IOException {
-        WebDriverManager.chromedriver().setup();
-        Properties props = new Properties();
-        InputStream is = BaseTest.class.getResourceAsStream("/browser.properties");
-        props.load(is);
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments(props.getProperty("chrome.arguments"));
-        driver = new ChromeDriver(chromeOptions);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.manage().window().setSize(new Dimension(900, 900));
+    public static void setUp() {
+        Configuration.reportsFolder = "target/reports";
 
-    }
-
-    @AfterAll
-    public static void cleanUp() {
-        driver.quit();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        options.addArguments("--incognito");
+        Configuration.browserCapabilities = options;
     }
 
 }
