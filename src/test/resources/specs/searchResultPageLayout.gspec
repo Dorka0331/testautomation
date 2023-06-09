@@ -1,26 +1,36 @@
 @objects
     header  xpath   //h1
-    logo    xpath   //*[@id="content"]/div/div[1]/div/header/div/a
-    product_list    css .product-list grid
-    email   id  email
-    password    id  password
+    logo    xpath   //div[@class = 'brand-header__logo']
+    header_wrapper  xpath   //div[@class = 'brand-header-wrapper']
+    product_list    xpath   //ul[@class = 'product-list grid']
+    search_bar   id  search-input
+    product_item*   xpath   //li[@class = 'product-list--list-item']
 
 = Header =
         header:
-            width   746px
-            height  36px
+            width   700 to 800px
+            height  30 to 40px
 
 
 = Logo =
         logo:
+            inside header_wrapper
+            left-of search_bar 0 to 500px
+            above header 100 to 150px
             width       100 to 200px
-            height      30 to 50px
+            height      40 to 70px
 
-= Fields =
-        email:
-            width       500 to 800px
-            height      20 to 40px
 
-        password:
-            width       500 to 800px
-            height      20 to 50px
+= SearchBar =
+        search_bar:
+            inside header_wrapper
+            width   300 to 600px
+            height  20 to 50px
+
+
+= Products =
+        product_item*:
+            component   searchItemLayout.gspec
+            width       200 to 300px
+            height      300 to 500px
+            inside      product_list

@@ -1,10 +1,8 @@
 package hu.masterfield.layoutTest;
 
 import com.galenframework.api.Galen;
-import com.galenframework.junit.GalenJUnitTestBase;
 import com.galenframework.reports.GalenTestInfo;
 import com.galenframework.reports.HtmlReportBuilder;
-import com.galenframework.reports.TestReport;
 import com.galenframework.reports.model.LayoutReport;
 //import hu.masterfield.TestDevice;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -13,7 +11,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,7 +24,7 @@ import java.util.*;
 import static com.codeborne.selenide.Selenide.$;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class LayoutTest{//} extends GalenJUnitTestBase {
+public class LoginPageLayoutTest {//} extends GalenJUnitTestBase {
 
      static WebDriver driver;
      static WebDriverWait wait;

@@ -1,0 +1,28 @@
+@objects
+    inventory_item_img  xpath   //img[@class = 'styled__Image-sjvkdn-0 bJErKA product-image beans-responsive-image__image']
+    inventory_item_name xpath   //a[@class = 'styled__Anchor-sc-1xbujuz-0 csVOnh beans-link__anchor']
+    inventory_item_quantity xpath   //input[@class = 'base-components__RootElement-sc-1mosoyj-1 styled__StyledInput-sc-1jd5f57-0 component__StyledAsInput-sc-1kpmik-4 jptQqM eJLlow styled__StyledInput-vtxwzb-3 lwMHo beans-quantity-controls__input beans-input']
+    inventory_item_price    xpath   //p[@class = 'styled__StyledHeading-sc-119w3hf-2 jWPEtj styled__Text-sc-8qlq5b-1 lnaeiZ beans-price__text']
+
+= Item section =
+
+    inventory_item_img:
+        inside  parent
+        width   130 to 150px
+        height  100 to 200px
+        above   inventory_item_name 10 to 100px
+
+    inventory_item_name:
+        inside  parent
+        width   50 to 150px
+        height  10 to 50 px
+        below   inventory_item_img 10 to 40px
+        above   inventory_item_price 100 to 200px
+
+
+    inventory_item_quantity:
+            inside  parent
+            width   50 to 100px
+            height  20 to 50 px
+            below   inventory_item_img 180 to 250px
+            below   inventory_item_price 0 to 20 px
