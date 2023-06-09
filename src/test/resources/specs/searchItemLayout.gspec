@@ -7,13 +7,11 @@
 = Item section =
 
     inventory_item_img:
-        inside  parent
         width   130 to 150px
         height  100 to 200px
         above   inventory_item_name 10 to 100px
 
     inventory_item_name:
-        inside  parent
         width   50 to 150px
         height  10 to 50 px
         below   inventory_item_img 10 to 40px
@@ -21,7 +19,6 @@
 
 
     inventory_item_quantity:
-            inside  parent
             width   50 to 100px
             height  20 to 50 px
             below   inventory_item_img 180 to 250px
