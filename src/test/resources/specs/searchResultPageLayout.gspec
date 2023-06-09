@@ -1,12 +1,13 @@
 @objects
     header  xpath   //h1
     logo    xpath   //*[@id="content"]/div/div[1]/div/header/div/a
+    product_list    css .product-list grid
     email   id  email
     password    id  password
 
 = Header =
         header:
-            width   740 to 750px
+            width   746px
             height  36px
 
 

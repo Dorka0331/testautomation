@@ -27,10 +27,10 @@ import java.util.*;
 import static com.codeborne.selenide.Selenide.$;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class LayoutTest extends GalenJUnitTestBase {
+public class LayoutTest{//} extends GalenJUnitTestBase {
 
-    static WebDriver driver;
-    static WebDriverWait wait;
+     static WebDriver driver;
+     static WebDriverWait wait;
 
     @BeforeAll
     public static void setup() {
@@ -64,13 +64,13 @@ public class LayoutTest extends GalenJUnitTestBase {
         driver.quit();
     }
 
-    @Override
+    /*@Override
     public WebDriver createDriver() {
         super.driver.set(driver);
         super.report.set(new TestReport());
         return driver;
     }
-
+*/
     static LayoutReport layoutReport;
 
     public static void reportUpdate() {
